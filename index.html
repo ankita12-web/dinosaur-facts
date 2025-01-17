@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaur Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dinosaur Facts</h1>
+        <button id="generate-fact">Show a Random Fact</button>
+        <div id="fact-display" class="fact-display"></div>
+    </div>
+    <script>
+        const dinosaurFacts = [
+            {
+                "fact": "Diverse Species",
+                "description": "Dinosaurs were a diverse group of reptiles that lived during the Mesozoic Era, which lasted about 180 million years. They included over 700 known species."
+            },
+            {
+                "fact": "Two Main Groups",
+                "description": "Dinosaurs are classified into two main groups: Saurischia (which includes theropods like Tyrannosaurus rex and sauropodomorphs like Brachiosaurus) and Ornithischia (which includes herbivorous dinosaurs like Stegosaurus and Triceratops)."
+            },
+            {
+                "fact": "Size Variation",
+                "description": "Dinosaurs varied greatly in size, from the small, chicken-sized Compsognathus to the massive Argentinosaurus, which could reach lengths of over 100 feet."
+            },
+            {
+                "fact": "Warm-Blooded vs. Cold-Blooded",
+                "description": "While many dinosaurs were once thought to be cold-blooded like modern reptiles, evidence suggests that some, particularly theropods, may have been warm-blooded."
+            },
+            {
+                "fact": "Feathers",
+                "description": "Some dinosaurs, particularly theropods, are believed to have had feathers. This suggests a closer evolutionary relationship between dinosaurs and modern birds."
+            },
+            {
+                "fact": "Extinction Event",
+                "description": "The most widely accepted theory for the mass extinction of dinosaurs is the impact hypothesis, which posits that a large asteroid struck Earth around 66 million years ago, leading to drastic environmental changes."
+            },
+            {
+                "fact": "Fossil Evidence",
+                "description": "Dinosaur fossils have been found on every continent, indicating that they were widespread and adapted to various environments."
+            },
+            {
+                "fact": "Social Behavior",
+                "description": "Some dinosaur species are believed to have exhibited social behavior, as evidenced by fossilized tracks showing groups moving together and nesting sites indicating parental care."
+            },
+            {
+                "fact": "Long Lifespan",
+                "description": "Dinosaurs likely had long lifespans, with some species living for several decades, similar to modern-day reptiles."
+            },
+            {
+                "fact": "Continued Legacy",
+                "description": "Birds are considered the modern descendants of theropod dinosaurs, meaning that dinosaurs are not entirely extinct; they live on through their avian relatives."
+            }
+        ];
+
+        document.getElementById('generate-fact').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * dinosaurFacts.length);
+            const fact = dinosaurFacts[randomIndex];
+            document.getElementById('fact-display').innerHTML = `<strong>${fact.fact}</strong>: ${fact.description}`;
+        });
+    </script>
+</body>
+</html>
